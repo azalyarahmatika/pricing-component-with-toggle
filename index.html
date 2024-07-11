@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | [Challenge Name Here]</title>
+
+  <style type="text/tailwindcss">
+    #toggle:checked ~ label div.toggle-circle {
+      @apply -translate-x-4;
+    }
+
+    .hidden-monthly_price, .hidden-annually_price {
+      @apply hidden;
+    }
+
+    .show-annually_price {
+      display: block;
+    }
+
+    .body_center {
+      justify-content: space-evenly;
+    }
+
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontSize: {
+            xxs: '0.6rem'
+          },
+          colors: {
+            very_light_grayish_blue: 'hsl(240, 78%, 98%)',
+            light_grayish_blue: 'hsl(234, 14%, 74%)',
+            grayish_blue: 'hsl(233, 13%, 49%)',
+            dark_grayish_blue: 'hsl(232, 13%, 33%)',
+            gradient_from: 'hsl(236, 72%, 79%)',
+            gradient_to: 'hsl(237, 63%, 64%)'
+          },
+          fontFamily: {
+            montserrat: 'Montserrat, sans-serif'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-very_light_grayish_blue sm:h-full sm:w-full sm:flex sm:items-center sm:justify-center sm:flex-col sm:py-6">
+  <img src="./images/bg-top.svg" alt="pattern" class="absolute -z-10 right-0 top-0 sm:w-72 h-96">
+  <img src="./images/bg-bottom.svg" alt="pattern" class="absolute -z-10 left-0 bottom-0 w-72 hidden sm:block">
+  <div>
+    <h1 class="font-montserrat text-grayish_blue text-xl text-center mt-8">Our Pricing</h1>
+    
+    <div class="flex justify-center items-center gap-2 mt-5 mb-6">
+      <span class="text-light_grayish_blue text-xs font-bold">Annually</span>
+      <input type="checkbox" class="hidden" id="toggle">
+      <label for="toggle">
+        <div class="w-9 h-5 bg-gradient-to-b from-gradient_from to-gradient_to rounded-full flex items-center justify-end p-0.5 cursor-pointer hover:opacity-70">
+          <div class="h-4 w-4 bg-white rounded-full toggle-circle"></div>
+        </div>
+      </label>
+      <span class="text-light_grayish_blue text-xs font-bold">Monthly</span>
+    </div>
+    
+  </div>
+
+  <div class="p-4 flex flex-col gap-4 sm:flex-row sm:justify-center items-center sm:gap-0 mx-auto">
+    <div class="bg-white rounded-lg text-center px-7 py-8 sm:w-64 sm:rounded-r-none w-[96%] max-w-80">
+      <h2 class="text-grayish_blue font-bold">Basic</h2>
+      <div class="mt-3 mb-6 text-5xl font-bold text-dark_grayish_blue flex justify-center items-center">
+        <span class="text-3xl font-bold">&dollar;</span>
+        <p class="inline monthly_price">19.99</p>
+        <p class="annually_price hidden-annually_price">199.99</p>
+      </div>
+      <p class="text-grayish_blue font-bold text-sm border-t border-b py-2">500 GB Storage</p>
+      <p class="text-grayish_blue font-bold text-sm border-b py-2">2 Users Allowed</p>
+      <p class="text-grayish_blue font-bold text-sm border-b py-2">Send up to 3 GB</p>
+      <button class="w-full border-2 border-white mt-6 p-2 rounded-lg bg-gradient-to-r from-gradient_from to-gradient_to font-bold text-white text-xs hover:text-gradient_from hover:from-white hover:to-white hover:border-2 hover:border-gradient_from">LEARN MORE</button>
+    </div>
+    
+    <div class="bg-gradient-to-b from-gradient_from to-gradient_to rounded-lg text-center px-7 py-8 sm:w-64 sm:transform sm:scale-y-110 sm:shadow-lg w-[96%] max-w-80">
+      <h2 class="text-white font-bold">Professional</h2>
+      <div class="mt-3 mb-6 text-5xl font-bold text-white flex justify-center items-center">
+        <span class="text-3xl font-bold">&dollar;</span>
+        <p class="inline monthly_price">24.99</p>
+        <p class="annually_price hidden-annually_price">249.99</p>
+      </div>
+      <p class="text-white font-bold text-sm border-t border-b py-2">1 TB Storage</p>
+      <p class="text-white font-bold text-sm border-b py-2">5 Users Allowed</p>
+      <p class="text-white font-bold text-sm border-b py-2">Send up to 10 GB</p>
+      <button class="w-full border-2 border-white mt-6 p-2 rounded-lg bg-white font-bold text-gradient_to text-xs hover:text-white hover:bg-transparent hover:border-2 hover:border-white">LEARN MORE</button>
+    </div>
+
+    <div class="bg-white rounded-lg text-center px-7 py-8 sm:w-64 sm:rounded-l-none w-[96%] max-w-80">
+      <h2 class="text-grayish_blue font-bold">Master</h2>
+      <div class="mt-3 mb-6 text-5xl font-bold text-dark_grayish_blue flex justify-center items-center">
+        <span class="text-3xl font-bold">&dollar;</span>
+        <p class="inline monthly_price">39.99</p>
+        <p class="annually_price hidden-annually_price">399.99</p>
+      </div>
+      <p class="text-grayish_blue font-bold text-sm border-t border-b py-2">2 TB Storage</p>
+      <p class="text-grayish_blue font-bold text-sm border-b py-2">10 Users Allowed</p>
+      <p class="text-grayish_blue font-bold text-sm border-b py-2">Send up to 20 GB</p>
+      <button class="w-full border-2 border-white mt-6 p-2 rounded-lg bg-gradient-to-r from-gradient_from to-gradient_to font-bold text-white text-xs hover:text-gradient_from hover:from-white hover:to-white hover:border-2 hover:border-gradient_from">LEARN MORE</button>
+    </div>
+  </div>
+
+  <div class="font-montserrat text-xxs text-center my-2 text-grayish_blue">
+    Challenge by <a class="text-gradient_from" href="https://www.frontendmentor.io/challenges/pricing-component-with-toggle-8vPwRMIC" target="_blank">Frontend Mentor</a>. 
+    Coded by <a class="text-gradient_from" href="https://azalyarahmatika.com" target="_blank">Azalya Rahmatika</a>.
+  </div>
+
+  <script>
+    document.getElementById('toggle').addEventListener('change', function() {
+      const monthlyPrices = document.querySelectorAll('.monthly_price');
+      const annuallyPrices = document.querySelectorAll('.annually_price');
+
+      if (this.checked) {
+        monthlyPrices.forEach(el => el.classList.add('hidden-monthly_price'));
+        annuallyPrices.forEach(el => {
+          el.classList.add('show-annually_price');
+          el.classList.remove('hidden-annually_price');
+        });
+      } else {
+        monthlyPrices.forEach(el => el.classList.remove('hidden-monthly_price'));
+        annuallyPrices.forEach(el => {
+          el.classList.remove('show-annually_price');
+          el.classList.add('hidden-annually_price');
+        });
+      }
+    });
+  </script>
+</body>
+</html>
